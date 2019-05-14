@@ -71,16 +71,52 @@ public:
             }
     }
 
-    void testCliqueMouse(float xPos,float yPos){
-        int columnClick = (int)(xPos / tileWidth);
-        int rowClick = (int)(yPos / tileHeight);
+    void testCliqueMouse(float xPos,float yPos) {
+        int columnClick = (int) (xPos / tileWidth);
+        int rowClick = (int) (yPos / tileHeight);
 
-        matrixColors[rowClick][columnClick].isVisible = false;
-
-
-
+        if (matrixColors[rowClick][columnClick].isVisible) {
+            //matrixColors[rowClick][columnClick].isVisible = false;
+            Tile tileActual = matrixColors[rowClick][columnClick];
+            for (int row = 0; row < numRows; row++) {
+                for (int col = 0; col < numCols; col++) {
+                    Tile tileAnother = matrixColors[row][col];
+                    if(tileAnother.isVisible) {
+                        matrixColors[row][col].isVisible = caculateDMax(tileActual.colorsRGB,tileAnother.colorsRGB);
+                    }
+                }
+            }
+        }
     }
 
+    bool caculateDMax(glm::vec3 actual, glm::vec3 another){
+
+        int actualR = actual.x*255;
+        int actualG = actual.y*255;
+        int actualB = actual.z*255;
+
+        int anotherR = another.x*255;
+        int anotherG = another.y*255;
+        int anotherB = another.z*255;
+
+
+        float dActual = ( (0-actualR)^2 + (0-actualG)^2 + (0-actualB)^2 )^(1/2);
+
+        float dAnother = ( (0-anotherR)^2 + (0-anotherG)^2 + (0-anotherB)^2 )^(1/2);
+
+
+        float limiteMin = dActual * 0.7f;
+        float limiteMax = dActual * 1.3f;
+
+        if(dAnother>limiteMin&&dAnother<limiteMax){
+            return false;
+        }else{
+            if(actualR==anotherR&&actualG==anotherG&&actualB==anotherB){
+                return false;
+            }
+            return true;
+        }
+    }
 
     void draw(Shader *shaderProgram) {
 
