@@ -6,73 +6,7 @@
 
 #IncludeRegexTransform: 
 
-../././header/stb_image.h
-stb_image.h
-../././header/stb_image.h
-stdio.h
--
-stdlib.h
--
-stdarg.h
--
-stddef.h
--
-stdlib.h
--
-string.h
--
-limits.h
--
-math.h
--
-stdio.h
--
-assert.h
--
-stdint.h
--
-emmintrin.h
--
-intrin.h
--
-arm_neon.h
--
-
-.././header/./stb_image.h
-stb_image.h
-.././header/./stb_image.h
-stdio.h
--
-stdlib.h
--
-stdarg.h
--
-stddef.h
--
-stdlib.h
--
-string.h
--
-limits.h
--
-math.h
--
-stdio.h
--
-assert.h
--
-stdint.h
--
-emmintrin.h
--
-intrin.h
--
-arm_neon.h
--
-
 .././header/ColorTile.h
-
-.././header/GameObject.h
 
 .././header/Includes.h
 iostream
@@ -107,26 +41,14 @@ glm/gtc/matrix_transform.hpp
 -
 glm/gtc/type_ptr.hpp
 -
-./header/stb_image.h
-.././header/./header/stb_image.h
-./stb_image.h
-.././header/./stb_image.h
-
-.././header/Layer.h
 
 .././header/Shader.h
-
-.././header/SpriteSheet.h
-
-.././header/Texture.h
 
 .././header/Transformations.h
 
 .././header/VerticesObject.h
 
 /Users/gian/GitHub/GameOfColors/GameOfColors/header/ColorTile.h
-
-/Users/gian/GitHub/GameOfColors/GameOfColors/header/GameObject.h
 
 /Users/gian/GitHub/GameOfColors/GameOfColors/header/Includes.h
 iostream
@@ -161,18 +83,8 @@ glm/gtc/matrix_transform.hpp
 -
 glm/gtc/type_ptr.hpp
 -
-./header/stb_image.h
-/Users/gian/GitHub/GameOfColors/GameOfColors/header/./header/stb_image.h
-./stb_image.h
-/Users/gian/GitHub/GameOfColors/GameOfColors/header/./stb_image.h
-
-/Users/gian/GitHub/GameOfColors/GameOfColors/header/Layer.h
 
 /Users/gian/GitHub/GameOfColors/GameOfColors/header/Shader.h
-
-/Users/gian/GitHub/GameOfColors/GameOfColors/header/SpriteSheet.h
-
-/Users/gian/GitHub/GameOfColors/GameOfColors/header/Texture.h
 
 /Users/gian/GitHub/GameOfColors/GameOfColors/header/VerticesObject.h
 
@@ -181,36 +93,20 @@ header/Includes.h
 /Users/gian/GitHub/GameOfColors/GameOfColors/source/header/Includes.h
 header/Shader.h
 /Users/gian/GitHub/GameOfColors/GameOfColors/source/header/Shader.h
-header/Texture.h
-/Users/gian/GitHub/GameOfColors/GameOfColors/source/header/Texture.h
-header/Layer.h
-/Users/gian/GitHub/GameOfColors/GameOfColors/source/header/Layer.h
-header/SpriteSheet.h
-/Users/gian/GitHub/GameOfColors/GameOfColors/source/header/SpriteSheet.h
 header/VerticesObject.h
 /Users/gian/GitHub/GameOfColors/GameOfColors/source/header/VerticesObject.h
 header/Transformations.h
 /Users/gian/GitHub/GameOfColors/GameOfColors/source/header/Transformations.h
-header/GameObject.h
-/Users/gian/GitHub/GameOfColors/GameOfColors/source/header/GameObject.h
 header/ColorTile.h
 /Users/gian/GitHub/GameOfColors/GameOfColors/source/header/ColorTile.h
 ../header/Includes.h
 /Users/gian/GitHub/GameOfColors/GameOfColors/header/Includes.h
 ../header/Shader.h
 /Users/gian/GitHub/GameOfColors/GameOfColors/header/Shader.h
-../header/Texture.h
-/Users/gian/GitHub/GameOfColors/GameOfColors/header/Texture.h
-../header/Layer.h
-/Users/gian/GitHub/GameOfColors/GameOfColors/header/Layer.h
-../header/SpriteSheet.h
-/Users/gian/GitHub/GameOfColors/GameOfColors/header/SpriteSheet.h
 ../header/VerticesObject.h
 /Users/gian/GitHub/GameOfColors/GameOfColors/header/VerticesObject.h
 ../header/Position.h
 /Users/gian/GitHub/GameOfColors/GameOfColors/header/Position.h
-../header/GameObject.h
-/Users/gian/GitHub/GameOfColors/GameOfColors/header/GameObject.h
 ../header/ColorTile.h
 /Users/gian/GitHub/GameOfColors/GameOfColors/header/ColorTile.h
 

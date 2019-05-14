@@ -37,15 +37,4 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-//Load image Libraries
-#define STB_IMAGE_IMPLEMENTATION
-#ifdef __APPLE__
-    #include "./header/stb_image.h"
-#elif _WIN64
-    #include "./stb_image.h"
-#endif //APPLE
-
-
-
-
 using namespace std;

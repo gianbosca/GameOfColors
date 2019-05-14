@@ -92,22 +92,10 @@
 		<Unit filename="/Users/gian/GitHub/GameOfColors/GameOfColors/header/ColorTile.h">
 			<Option target="GameOfColors"/>
 		</Unit>
-		<Unit filename="/Users/gian/GitHub/GameOfColors/GameOfColors/header/GameObject.h">
-			<Option target="GameOfColors"/>
-		</Unit>
 		<Unit filename="/Users/gian/GitHub/GameOfColors/GameOfColors/header/Includes.h">
 			<Option target="GameOfColors"/>
 		</Unit>
-		<Unit filename="/Users/gian/GitHub/GameOfColors/GameOfColors/header/Layer.h">
-			<Option target="GameOfColors"/>
-		</Unit>
 		<Unit filename="/Users/gian/GitHub/GameOfColors/GameOfColors/header/Shader.h">
-			<Option target="GameOfColors"/>
-		</Unit>
-		<Unit filename="/Users/gian/GitHub/GameOfColors/GameOfColors/header/SpriteSheet.h">
-			<Option target="GameOfColors"/>
-		</Unit>
-		<Unit filename="/Users/gian/GitHub/GameOfColors/GameOfColors/header/Texture.h">
 			<Option target="GameOfColors"/>
 		</Unit>
 		<Unit filename="/Users/gian/GitHub/GameOfColors/GameOfColors/header/Tilemap.h">

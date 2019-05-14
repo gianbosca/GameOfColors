@@ -10,12 +10,8 @@ add_executable(GameOfColors
         source/main.cpp
         header/Includes.h
         header/Shader.h
-        header/Texture.h
-        header/Layer.h
-        header/SpriteSheet.h
         header/VerticesObject.h
         header/Transformations.h
-        header/GameObject.h
         header/Tilemap.h
         header/ColorTile.h)
 
