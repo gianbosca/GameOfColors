@@ -98,6 +98,8 @@ public:
                 //seleciona o tile a ser desenhado
                 Tile tile = matrixColors[row][col];
 
+
+                ///TEM ERRO
                 glUniformMatrix3fv(
                         glGetUniformLocation(shaderProgram->Program, "colorValues"),1,
                         GL_FALSE, glm::value_ptr(tile.colorsRGB));

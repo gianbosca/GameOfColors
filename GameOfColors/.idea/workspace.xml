@@ -12,7 +12,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5461488e-2537-416c-b145-07eb6153b692" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/header/ColorTile.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header/ColorTile.h" beforeDir="false" afterPath="$PROJECT_DIR$/header/ColorTile.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shader/fragmentShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/shader/fragmentShader.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shader/vertexShader.txt" beforeDir="false" afterPath="$PROJECT_DIR$/shader/vertexShader.txt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,8 +58,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/header/ColorTile.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="88" column="56" selection-start-line="88" selection-start-column="45" selection-end-line="88" selection-end-column="56" />
+            <state relative-caret-position="356">
+              <caret line="102" column="65" selection-start-line="102" selection-start-column="65" selection-end-line="102" selection-end-column="65" />
             </state>
           </provider>
         </entry>
@@ -85,20 +87,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/shader/fragmentShader.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
-              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+              <caret line="2" column="7" selection-start-line="2" selection-end-line="2" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/shader/vertexShader.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+            <state relative-caret-position="75">
+              <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -155,9 +157,9 @@
         <option value="$PROJECT_DIR$/header/Tilemap.h" />
         <option value="$PROJECT_DIR$/header/VerticesObject.h" />
         <option value="$PROJECT_DIR$/source/main.cpp" />
+        <option value="$PROJECT_DIR$/shader/fragmentShader.txt" />
         <option value="$PROJECT_DIR$/header/ColorTile.h" />
         <option value="$PROJECT_DIR$/shader/vertexShader.txt" />
-        <option value="$PROJECT_DIR$/shader/fragmentShader.txt" />
       </list>
     </option>
   </component>
@@ -316,7 +318,7 @@
       <workItem from="1557785596708" duration="362000" />
       <workItem from="1557788159007" duration="990000" />
       <workItem from="1557790001069" duration="607000" />
-      <workItem from="1557791409285" duration="4601000" />
+      <workItem from="1557791409285" duration="4923000" />
     </task>
     <task id="LOCAL-00001" summary="teste via clion">
       <created>1555195790421</created>
@@ -329,7 +331,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85611000" />
+    <option name="totallyTimeSpent" value="85933000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -559,22 +561,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/header/ColorTile.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="88" column="56" selection-start-line="88" selection-start-column="45" selection-end-line="88" selection-end-column="56" />
+        <state relative-caret-position="356">
+          <caret line="102" column="65" selection-start-line="102" selection-start-column="65" selection-end-line="102" selection-end-column="65" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shader/vertexShader.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/shader/fragmentShader.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/shader/vertexShader.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+          <caret line="2" column="7" selection-start-line="2" selection-end-line="2" selection-end-column="7" />
         </state>
       </provider>
     </entry>
