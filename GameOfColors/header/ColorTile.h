@@ -100,9 +100,9 @@ public:
 
 
                 ///TEM ERRO
-                glUniformMatrix3fv(
-                        glGetUniformLocation(shaderProgram->Program, "colorValues"),1,
-                        GL_FALSE, glm::value_ptr(tile.colorsRGB));
+                glUniform3fv(
+                        glGetUniformLocation(shaderProgram->Program, "colorValues"), 1,
+                        glm::value_ptr(tile.colorsRGB));
 
 
                 // Define em quais vertices sera desenhado pelo shader
