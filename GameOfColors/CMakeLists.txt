@@ -12,7 +12,6 @@ add_executable(GameOfColors
         header/Shader.h
         header/VerticesObject.h
         header/Transformations.h
-        header/Tilemap.h
         header/ColorTile.h)
 
 find_package(GLEW REQUIRED)

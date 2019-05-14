@@ -98,9 +98,6 @@
 		<Unit filename="/Users/gian/GitHub/GameOfColors/GameOfColors/header/Shader.h">
 			<Option target="GameOfColors"/>
 		</Unit>
-		<Unit filename="/Users/gian/GitHub/GameOfColors/GameOfColors/header/Tilemap.h">
-			<Option target="GameOfColors"/>
-		</Unit>
 		<Unit filename="/Users/gian/GitHub/GameOfColors/GameOfColors/header/Transformations.h">
 			<Option target="GameOfColors"/>
 		</Unit>

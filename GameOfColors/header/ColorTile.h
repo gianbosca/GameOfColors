@@ -71,6 +71,17 @@ public:
             }
     }
 
+    void testCliqueMouse(float xPos,float yPos){
+        int columnClick = (int)(xPos / tileWidth);
+        int rowClick = (int)(yPos / tileHeight);
+
+        matrixColors[rowClick][columnClick].isVisible = false;
+
+
+
+    }
+
+
     void draw(Shader *shaderProgram) {
 
         // Define shaderProgram como o shader a ser utilizado
@@ -99,10 +110,16 @@ public:
                 Tile tile = matrixColors[row][col];
 
 
-                ///TEM ERRO
-                glUniform3fv(
-                        glGetUniformLocation(shaderProgram->Program, "colorValues"), 1,
-                        glm::value_ptr(tile.colorsRGB));
+                if(tile.isVisible){
+                    glUniform3fv(
+                            glGetUniformLocation(shaderProgram->Program, "colorValues"), 1,
+                            glm::value_ptr(tile.colorsRGB));
+                } else {
+
+                    glUniform3fv(
+                            glGetUniformLocation(shaderProgram->Program, "colorValues"), 1,
+                            glm::value_ptr(glm::vec3(0,0,0)));
+                }
 
 
                 // Define em quais vertices sera desenhado pelo shader

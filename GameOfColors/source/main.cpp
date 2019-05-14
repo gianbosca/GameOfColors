@@ -14,6 +14,7 @@
 
 Shader *shaderProgram;
 GLFWwindow *window;
+ColorTiles *colorsTiles;
 
 //Atributos janela
 int WIDTH = 800;
@@ -37,6 +38,23 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
 void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
     if(action == GLFW_PRESS) keys[key] = 1;
 	if(action == GLFW_RELEASE) keys[key] = 0;
+}
+
+/*
+Define acoes do mouse
+*/
+ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
+    if (action == GLFW_PRESS) {
+        if (button == GLFW_MOUSE_BUTTON_LEFT) {
+            // pega pos click
+            double xpos, ypos;
+            glfwGetCursorPos(window, &xpos, &ypos);
+
+            colorsTiles->testCliqueMouse((float)xpos,(float)ypos);
+
+
+        }
+    }
 }
 
 GLFWwindow* createWindow() {
@@ -87,11 +105,10 @@ int main() {
 	glfwSetWindowSizeCallback(window, window_size_callback);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
-    //instancia do tilemap
-    //Tilemap(float totalWidth, float totalHeight, int numRows, int numCols);
-//    Tilemap *tilemap = new Tilemap(WIDTH, HEIGHT, 20, 25);
+    // esta para quando clicar com o mouse
+    glfwSetMouseButtonCallback(window, mouse_button_callback);
 
-ColorTiles *colors = new ColorTiles(WIDTH, HEIGHT);
+    colorsTiles = new ColorTiles(WIDTH, HEIGHT);
 
     // looping do main
 	while (!glfwWindowShouldClose(window)) {
@@ -105,7 +122,7 @@ ColorTiles *colors = new ColorTiles(WIDTH, HEIGHT);
 			glGetUniformLocation(shaderProgram->Program, "proj"), 1, GL_FALSE, glm::value_ptr(projection));
 
 		//desenha
-        colors->draw(shaderProgram);
+        colorsTiles->draw(shaderProgram);
 
         //fila eventos 
 		glfwPollEvents();
