@@ -44,16 +44,11 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 Define acoes do mouse
 */
  void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
-    if (action == GLFW_PRESS) {
-        if (button == GLFW_MOUSE_BUTTON_LEFT) {
-            // pega pos click
-            double xpos, ypos;
-            glfwGetCursorPos(window, &xpos, &ypos);
+    if (action == GLFW_PRESS && button == GLFW_MOUSE_BUTTON_LEFT) {
+        double xpos, ypos;
+        glfwGetCursorPos(window, &xpos, &ypos);
 
-            colorsTiles->testCliqueMouse((float)xpos,(float)ypos);
-
-
-        }
+        colorsTiles->testCliqueMouse((float)xpos,(float)ypos);
     }
 }
 
