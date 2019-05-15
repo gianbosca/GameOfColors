@@ -48,7 +48,8 @@ Define acoes do mouse
         double xpos, ypos;
         glfwGetCursorPos(window, &xpos, &ypos);
 
-        colorsTiles->testCliqueMouse((float)xpos,(float)ypos);
+        int manyMatcheds = colorsTiles->testCliqueMouse((float)xpos,(float)ypos);
+        printf("Você acertou %d.\n",manyMatcheds);
     }
 }
 

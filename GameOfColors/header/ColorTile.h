@@ -71,22 +71,30 @@ public:
             }
     }
 
-    void testCliqueMouse(float xPos,float yPos) {
+    int testCliqueMouse(float xPos,float yPos) {
+        int counter = 0;
         int columnClick = (int) (xPos / tileWidth);
         int rowClick = (int) (yPos / tileHeight);
 
         if (matrixColors[rowClick][columnClick].isVisible) {
-            //matrixColors[rowClick][columnClick].isVisible = false;
+            matrixColors[rowClick][columnClick].isVisible = false;
+            counter = counter+1;
             Tile tileActual = matrixColors[rowClick][columnClick];
             for (int row = 0; row < numRows; row++) {
                 for (int col = 0; col < numCols; col++) {
                     Tile tileAnother = matrixColors[row][col];
                     if(tileAnother.isVisible) {
-                        matrixColors[row][col].isVisible = caculateDMax(tileActual.colorsRGB,tileAnother.colorsRGB);
+                        bool notMatched = caculateDMax(tileActual.colorsRGB,tileAnother.colorsRGB);
+                        matrixColors[row][col].isVisible = notMatched;
+                        if(false == notMatched){
+                            counter = counter+1;
+                        }
                     }
                 }
             }
         }
+
+        return counter;
     }
 
     bool caculateDMax(glm::vec3 actual, glm::vec3 another){
