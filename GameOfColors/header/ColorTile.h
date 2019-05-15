@@ -99,16 +99,14 @@ public:
         int anotherG = another.y*255;
         int anotherB = another.z*255;
 
+        double distanceOfRed = actualR - anotherR;
+        double distanceOfGreen = actualG - anotherG;
+        double distanceOfBlue = actualB - anotherB;
 
-        float dActual = ( (0-actualR)^2 + (0-actualG)^2 + (0-actualB)^2 )^(1/2);
+        double distance = sqrt(pow(distanceOfRed, 2) + pow(distanceOfGreen, 2) + pow(distanceOfBlue, 2));
+        double distanceMax = sqrt(pow((0-255), 2) + pow((0-255), 2) + pow((0-255), 2));
 
-        float dAnother = ( (0-anotherR)^2 + (0-anotherG)^2 + (0-anotherB)^2 )^(1/2);
-
-
-        float limiteMin = dActual * 0.7f;
-        float limiteMax = dActual * 1.3f;
-
-        if(dAnother>limiteMin&&dAnother<limiteMax){
+        if(distance / distanceMax <= 0.15){
             return false;
         }else{
             if(actualR==anotherR&&actualG==anotherG&&actualB==anotherB){
