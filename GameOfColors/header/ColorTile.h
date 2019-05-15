@@ -109,9 +109,6 @@ public:
         if(distance / distanceMax <= 0.15){
             return false;
         }else{
-            if(actualR==anotherR&&actualG==anotherG&&actualB==anotherB){
-                return false;
-            }
             return true;
         }
     }

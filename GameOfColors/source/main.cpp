@@ -53,7 +53,7 @@ Define acoes do mouse
 }
 
 GLFWwindow* createWindow() {
-    GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Try to survive thirty seconds!", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Jogo das Cores!", NULL, NULL);
     if (window == NULL) {
         printf("%s", "Houve uma falha ao criar a janela GLFW");
         glfwTerminate();
