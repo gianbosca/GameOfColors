@@ -84,7 +84,7 @@ int main() {
 	glewInit();
 
 	//criacao do shader
-	shaderProgram = new Shader("../shader/vertexShader.txt", "../shader/fragmentShader.txt");
+	shaderProgram = new Shader("shader/vertexShader.txt", "shader/fragmentShader.txt");
 
 	// define shader para uso
 	shaderProgram->UseProgramShaders();
