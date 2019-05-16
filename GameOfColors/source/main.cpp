@@ -16,12 +16,14 @@ Shader *shaderProgram;
 GLFWwindow *window;
 ColorTiles *colorsTiles;
 
-int ROUNDS = 4;
+int ROUNDS = 5;
 int POINTS = 0;
 
 //Atributos janela
 int WIDTH = 800;
 int HEIGHT = 600;
+int RESIZED_WIDTH = 800;
+int RESIZED_HEIGHT = 600;
 
 //teclas pressionadas
 int keys[1024];
@@ -29,6 +31,8 @@ int keys[1024];
 //Define acoes do redimensionamento da tela
 void window_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
+    RESIZED_WIDTH = width;
+    RESIZED_HEIGHT = height;
 }
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
@@ -54,6 +58,10 @@ Define acoes do mouse
     if (action == GLFW_PRESS && button == GLFW_MOUSE_BUTTON_LEFT) {
         double xpos, ypos;
         glfwGetCursorPos(window, &xpos, &ypos);
+
+        //Realiza a proporcao do clique para projecao original
+        xpos = WIDTH * xpos / RESIZED_WIDTH;
+        ypos = HEIGHT * ypos / RESIZED_HEIGHT;
 
         int manyMatcheds = colorsTiles->testCliqueMouse((float)xpos,(float)ypos);
         if(manyMatcheds>0){
@@ -126,6 +134,8 @@ int main() {
     glfwSetMouseButtonCallback(window, mouse_button_callback);
 
     colorsTiles = new ColorTiles(WIDTH, HEIGHT);
+
+    printf("Você tem %d chances.\n\n",ROUNDS);
 
     // looping do main
 	while (!glfwWindowShouldClose(window)) {
