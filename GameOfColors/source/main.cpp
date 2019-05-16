@@ -16,6 +16,9 @@ Shader *shaderProgram;
 GLFWwindow *window;
 ColorTiles *colorsTiles;
 
+int ROUNDS = 4;
+int POINTS = 0;
+
 //Atributos janela
 int WIDTH = 800;
 int HEIGHT = 600;
@@ -40,6 +43,10 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 	if(action == GLFW_RELEASE) keys[key] = 0;
 }
 
+int calculePoints(int manyMatcheds){
+    return manyMatcheds * ROUNDS;
+}
+
 /*
 Define acoes do mouse
 */
@@ -49,9 +56,23 @@ Define acoes do mouse
         glfwGetCursorPos(window, &xpos, &ypos);
 
         int manyMatcheds = colorsTiles->testCliqueMouse((float)xpos,(float)ypos);
-        printf("Você acertou %d.\n",manyMatcheds);
+        if(manyMatcheds>0){
+            printf("Você acertou %d.\n",manyMatcheds);
+            POINTS = POINTS + calculePoints(manyMatcheds);
+            ROUNDS--;
+
+            if(ROUNDS==0){
+                printf("\nO jogo acabou, você fez %d pontos.\n",POINTS);
+                glfwSetWindowShouldClose(window, true);
+            } else{
+                printf("você está com %d pontos.\n",POINTS);
+                printf("Você tem %d chances.\n\n",ROUNDS);
+            }
+        }
+
     }
 }
+
 
 GLFWwindow* createWindow() {
     GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Jogo das Cores!", NULL, NULL);
