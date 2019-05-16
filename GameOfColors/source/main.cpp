@@ -2,13 +2,11 @@
     #include "header/Includes.h";
     #include "header/Shader.h";
     #include "header/VerticesObject.h";
-	#include "header/Transformations.h";
     #include "header/ColorTile.h";
 #elif _WIN64
 	#include "../header/Includes.h";
 	#include "../header/Shader.h";
 	#include "../header/VerticesObject.h";
-	#include "../header/Position.h";
 	#include "../header/ColorTile.h";
 #endif
 
