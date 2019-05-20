@@ -157,5 +157,7 @@ int main() {
     glfwTerminate();
 
     return 0;
+
+    delete colorsTiles;
 }
 
