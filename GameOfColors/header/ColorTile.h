@@ -1,7 +1,3 @@
-//
-// Created by Gian Boschetti on 2019-05-13.
-//
-
 #ifndef GAMEOFCOLORS_COLORTILE_H
 #define GAMEOFCOLORS_COLORTILE_H
 
