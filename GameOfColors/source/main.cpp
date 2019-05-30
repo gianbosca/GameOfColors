@@ -14,7 +14,8 @@ Shader *shaderProgram;
 GLFWwindow *window;
 ColorTiles *colorsTiles;
 
-int ROUNDS = 5;
+int ROUND = 0;
+int ROUNDS = 4;
 int POINTS = 0;
 
 //Atributos janela
@@ -45,14 +46,36 @@ void key_callback(GLFWwindow* window, int key, int scancode, int action, int mod
 	if(action == GLFW_RELEASE) keys[key] = 0;
 }
 
+int calculateChances(){
+    return ROUNDS-ROUND;
+}
+
 int calculePoints(int manyMatcheds){
-    return manyMatcheds * ROUNDS;
+    switch ( ROUND )
+    {
+        case 1:
+            return manyMatcheds * 10;
+            break;
+        case 2:
+            return manyMatcheds * 5;
+            break;
+        case 3:
+            return manyMatcheds * 2;
+            break;
+        case 4:
+            return manyMatcheds * 1;
+            break;
+        default:
+            return manyMatcheds;
+    }
+
+
 }
 
 /*
 Define acoes do mouse
 */
- void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
+void mouse_button_callback(GLFWwindow* window, int button, int action, int mods) {
     if (action == GLFW_PRESS && button == GLFW_MOUSE_BUTTON_LEFT) {
         double xpos, ypos;
         glfwGetCursorPos(window, &xpos, &ypos);
@@ -64,15 +87,16 @@ Define acoes do mouse
         int manyMatcheds = colorsTiles->testCliqueMouse((float)xpos,(float)ypos);
         if(manyMatcheds>0){
             printf("Você acertou %d.\n",manyMatcheds);
+            ROUND++;
             POINTS = POINTS + calculePoints(manyMatcheds);
-            ROUNDS--;
 
-            if(ROUNDS==0){
+
+            if(ROUND==ROUNDS){
                 printf("\nO jogo acabou, você fez %d pontos.\n",POINTS);
                 glfwSetWindowShouldClose(window, true);
             } else{
                 printf("você está com %d pontos.\n",POINTS);
-                printf("Você tem %d chances.\n\n",ROUNDS);
+                printf("Você tem %d chances.\n\n",calculateChances());
             }
         }
 
@@ -133,7 +157,7 @@ int main() {
 
     colorsTiles = new ColorTiles(WIDTH, HEIGHT);
 
-    printf("Você tem %d chances.\n\n",ROUNDS);
+    printf("Você tem %d chances.\n\n",calculateChances());
 
     // looping do main
 	while (!glfwWindowShouldClose(window)) {
