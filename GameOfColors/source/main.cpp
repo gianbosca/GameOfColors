@@ -1,3 +1,7 @@
+#define ROWS 40
+#define COLS 20
+#define ROUNDS 4
+
 #ifdef __APPLE__
     #include "header/Includes.h";
     #include "header/Shader.h";
@@ -15,7 +19,6 @@ GLFWwindow *window;
 ColorTiles *colorsTiles;
 
 int ROUND = 0;
-int ROUNDS = 4;
 int POINTS = 0;
 
 //Atributos janela
@@ -28,14 +31,10 @@ int RESIZED_HEIGHT = 600;
 int keys[1024];
 
 //Define acoes do redimensionamento da tela
-void window_size_callback(GLFWwindow* window, int width, int height) {
+void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
     RESIZED_WIDTH = width;
     RESIZED_HEIGHT = height;
-}
-
-void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
-    glViewport(0, 0, width, height);
 }
 
 /*
@@ -145,11 +144,7 @@ int main() {
 	glEnable(GL_DEPTH_TEST);
 
 	//Create SO callbacks
-	// esta para quando clicar uma tecla
-	glfwSetKeyCallback(window, key_callback);
-
 	// esta para quando redimensionar a tela
-	glfwSetWindowSizeCallback(window, window_size_callback);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
     // esta para quando clicar com o mouse
@@ -182,6 +177,8 @@ int main() {
 
     return 0;
 
+
     delete colorsTiles;
+    delete shaderProgram;
 }
 

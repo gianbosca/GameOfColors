@@ -1,7 +1,3 @@
-//
-// Created by Gian Boschetti on 2019-04-04.
-//
-
 //entradas e saidas std out
 #include <iostream>
 #include <stdio.h>

@@ -1,12 +1,3 @@
-//
-// Created by Gian Boschetti on 2019-04-13.
-//
-
-#ifndef TESTANDO_SHADER_H
-#define TESTANDO_SHADER_H
-
-using namespace std;
-
 class Shader {
 public:
     GLuint Program;
@@ -94,6 +85,3 @@ public:
         glUseProgram(this->Program);
     }
 };
-
-
-#endif //TESTANDO_SHADER_H

@@ -1,6 +1,3 @@
-#ifndef GAMEOFCOLORS_COLORTILE_H
-#define GAMEOFCOLORS_COLORTILE_H
-
 struct Tile{
     glm::vec3 colorsRGB;
     bool isVisible;
@@ -12,14 +9,8 @@ struct Tile{
         colorsRGB = glm::vec3(r,g,b);
         isVisible = true;
     }
-
-
-
-
 };
 
-#define numRows 40
-#define numCols 20
 class ColorTiles{
 public:
 
@@ -29,12 +20,12 @@ public:
 
     VerticesObject* vertices;
 
-    Tile matrixColors[numRows][numCols] = {};
+    Tile matrixColors[ROWS][COLS] = {};
 
     ColorTiles(float totalWidth, float totalHeight)
     {
-        this->tileWidth = totalWidth / (float)numCols;
-        this->tileHeight = totalHeight / (float)numRows;
+        this->tileWidth = totalWidth / (float)COLS;
+        this->tileHeight = totalHeight / (float)ROWS;
 
         this->modelMatrix = glm::mat4(1);
 
@@ -60,8 +51,8 @@ public:
 
     void createMatrixColors(){
         srand((unsigned) time(NULL)) ;
-        for (int row = 0; row < numRows; row++) {
-              for (int col = 0; col < numCols; col++) {
+        for (int row = 0; row < ROWS; row++) {
+              for (int col = 0; col < COLS; col++) {
                     Tile t = Tile();
                     matrixColors[row][col] = t;
                   }
@@ -77,8 +68,8 @@ public:
             matrixColors[rowClick][columnClick].isVisible = false;
             counter = counter+1;
             Tile tileActual = matrixColors[rowClick][columnClick];
-            for (int row = 0; row < numRows; row++) {
-                for (int col = 0; col < numCols; col++) {
+            for (int row = 0; row < ROWS; row++) {
+                for (int col = 0; col < COLS; col++) {
                     Tile tileAnother = matrixColors[row][col];
                     if(tileAnother.isVisible) {
                         bool notMatched = caculateDMax(tileActual.colorsRGB,tileAnother.colorsRGB);
@@ -126,8 +117,8 @@ public:
         // Define em quais vertices sera desenhado pelo shader
         vertices->bind(shaderProgram);
 
-        for (int row = 0; row < numRows; row++) {
-            for (int col = 0; col < numCols; col++) {
+        for (int row = 0; row < ROWS; row++) {
+            for (int col = 0; col < COLS; col++) {
 
                 float xi = col*tileWidth  + tileWidth/2;
                 float yi = row*tileHeight + tileHeight/2;
@@ -166,5 +157,3 @@ public:
     }
 
 };
-
-#endif //GAMEOFCOLORS_COLORTILE_H
