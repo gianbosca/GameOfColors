@@ -18,8 +18,8 @@ Shader *shaderProgram;
 GLFWwindow *window;
 ColorTiles *colorsTiles;
 
-int ROUND = 0;
-int POINTS = 0;
+int ROUND;
+int POINTS;
 
 //Atributos janela
 int WIDTH = 800;
@@ -35,14 +35,6 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height) {
     glViewport(0, 0, width, height);
     RESIZED_WIDTH = width;
     RESIZED_HEIGHT = height;
-}
-
-/*
-	Controla que teclas estão pressionadas em um dado momento
-*/
-void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
-    if(action == GLFW_PRESS) keys[key] = 1;
-	if(action == GLFW_RELEASE) keys[key] = 0;
 }
 
 int calculateChances(){
@@ -67,8 +59,21 @@ int calculePoints(int manyMatcheds){
         default:
             return manyMatcheds;
     }
+}
 
+void startOrRebootGame(){
+    ROUND = 0;
+    POINTS = 0;
+    colorsTiles = new ColorTiles(WIDTH, HEIGHT);
+    printf("---------------------------");
+    printf("\nVocê tem %d chances.\n\n",calculateChances());
+}
 
+/*
+	Controla que teclas estão pressionadas em um dado momento
+*/
+void key_callback(GLFWwindow* window, int key, int scancode, int action, int mods) {
+    if(action == GLFW_PRESS && key == GLFW_KEY_ENTER) startOrRebootGame();
 }
 
 /*
@@ -92,7 +97,7 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 
             if(ROUND==ROUNDS){
                 printf("\nO jogo acabou, você fez %d pontos.\n",POINTS);
-                glfwSetWindowShouldClose(window, true);
+                startOrRebootGame();
             } else{
                 printf("você está com %d pontos.\n",POINTS);
                 printf("Você tem %d chances.\n\n",calculateChances());
@@ -150,9 +155,11 @@ int main() {
     // esta para quando clicar com o mouse
     glfwSetMouseButtonCallback(window, mouse_button_callback);
 
-    colorsTiles = new ColorTiles(WIDTH, HEIGHT);
+    // esta para quando clicar uma tecla
+    glfwSetKeyCallback(window, key_callback);
 
-    printf("Você tem %d chances.\n\n",calculateChances());
+    // inicia o jogo
+    startOrRebootGame();
 
     // looping do main
 	while (!glfwWindowShouldClose(window)) {
