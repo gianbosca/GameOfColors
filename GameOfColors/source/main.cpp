@@ -66,7 +66,7 @@ void startOrRebootGame(){
     POINTS = 0;
     colorsTiles = new ColorTiles(WIDTH, HEIGHT);
     printf("---------------------------");
-    printf("\nVocê tem %d chances.\n\n",calculateChances());
+    printf("\nYou have %d chances.\n\n",calculateChances());
 }
 
 /*
@@ -90,17 +90,17 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 
         int manyMatcheds = colorsTiles->testCliqueMouse((float)xpos,(float)ypos);
         if(manyMatcheds>0){
-            printf("Você acertou %d.\n",manyMatcheds);
+            printf("You have %d.\n",manyMatcheds);
             ROUND++;
             POINTS = POINTS + calculePoints(manyMatcheds);
 
 
             if(ROUND==ROUNDS){
-                printf("\nO jogo acabou, você fez %d pontos.\n",POINTS);
+                printf("\nThe Game is over, you made %d points.\n",POINTS);
                 startOrRebootGame();
             } else{
-                printf("você está com %d pontos.\n",POINTS);
-                printf("Você tem %d chances.\n\n",calculateChances());
+                printf("You are with %d points.\n",POINTS);
+                printf("You have %d chances.\n\n",calculateChances());
             }
         }
 
@@ -109,7 +109,7 @@ void mouse_button_callback(GLFWwindow* window, int button, int action, int mods)
 
 
 GLFWwindow* createWindow() {
-    GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Jogo das Cores!", NULL, NULL);
+    GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "Game of colors", NULL, NULL);
     if (window == NULL) {
         printf("%s", "Houve uma falha ao criar a janela GLFW");
         glfwTerminate();

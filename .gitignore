@@ -1,2 +1,9 @@
 */.idea/**
 */cmake-build-debug/**
+
+# Ignore aditional libraries
+
+.vs/
+x64/
+
+!/External/**
